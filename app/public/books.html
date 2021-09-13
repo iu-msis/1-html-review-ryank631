@@ -45,7 +45,7 @@
 </html>
 
 
-<table class="table">
+<table id="mytable" class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -125,5 +125,11 @@
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+
+  <script src="js/tablesort.min.js"></script>
+  <script>
+    // Tablesort plugin from http://tristen.ca/tablesort/demo/ //
+    new Tablesort(document.getElementById('mytable'));
+  </script>
 
   
