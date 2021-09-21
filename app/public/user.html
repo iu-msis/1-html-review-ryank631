@@ -45,13 +45,17 @@
   </body>
 </html>
 
+<form v-on:submit.prevent="fetchUserData">
+</form>
+
+<div id="userApp">
   <h1>Robert's Information</h1>
   <ul class="list-group">
-    <li class="list-group-item">Name: Robert Obrest</li>
-    <li class="list-group-item">Country: Bosnia and Herzegovnia</li>
-    <li class="list-group-item">Birthdate: 7/2/1978</li>
-    <li class="list-group-item">Age: 56</li>
-    <li class="list-group-item"><a href="mailto:robo67@gmail.com"Send To>Robert's Email</a></li>
+    <li class="list-group-item">{{ result.name.first }} {{ result.name.last }}</li>
+    <li class="list-group-item">{{ result.location.country }}</li>
+    <li class="list-group-item">{{ prettyBirthday }}</li>
+    <li class="list-group-item">{{ result.dob.age }}</li>
+    <li class="list-group-item"><v-bind:href="'mailto:'+person.email">{{ result.email }}</a></li>
   </ul>
 
 
@@ -68,8 +72,13 @@
     </style>
   </head>
   <body>
-    <a taregt="_blank"href=img/bosnia.jpg>
-      <img src="img/bosnia.jpg" class="img-bosnia" alt="picture of bosnia and herzgovnia">
+    <a taregt="_blank"href=img/randomman.png.png>
+      <img src="img/randomman.png.png" class="img-robert" alt="picture of robert">
+      
     </a>
   </body>
   
+  <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+  <script src="js/index.js"></script>
+
+  </div>
