@@ -41,23 +41,25 @@
     
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
-
+    
   </body>
 </html>
+
+<script src="https://unpkg.com/vue@next"></script>
 
 <form v-on:submit.prevent="fetchUserData">
 </form>
 
 <div id="userApp">
-  <h1>Robert's Information</h1>
-  <ul class="list-group">
-    <li class="list-group-item">{{ result.name.first }} {{ result.name.last }}</li>
-    <li class="list-group-item">{{ result.location.country }}</li>
-    <li class="list-group-item">{{ prettyBirthday }}</li>
-    <li class="list-group-item">{{ result.dob.age }}</li>
-    <li class="list-group-item"><v-bind:href="'mailto:'+person.email">{{ result.email }}</a></li>
-  </ul>
-
+  <center><h1>Random User Information</h1></center>
+    <center>
+    <h3>Name: {{ result.name.first }} {{ result.name.last }}</h3>
+    <h3>Country: {{ result.location.country }}</h3>
+    <h3>Birthdate: {{ prettyBirthday }}</h3>
+    <h3>Age: {{ result.dob.age }}</h3>
+    <h3>Email: <a v-bind:href="'mailto'+result.email">{{ result.email}} </a></h3>
+    <img v-bind:src="result.picture.large">
+    </center>
 
   <head>
     <style>
@@ -73,7 +75,7 @@
   </head>
   <body>
     <a taregt="_blank"href=img/randomman.png.png>
-      <img src="img/randomman.png.png" class="img-robert" alt="picture of robert">
+  
       
     </a>
   </body>
