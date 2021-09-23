@@ -47,12 +47,16 @@
 
 <script src="https://unpkg.com/vue@next"></script>
 
-<form v-on:submit.prevent="fetchUserData">
-</form>
+
 
 <div id="userApp">
   <center><h1>Random User Information</h1></center>
     <center>
+
+      <form v-on:submit.prevent="fetchUserData">
+        <button type="submit">Refresh</button>
+      </form>
+      
     <h3>Name: {{ result.name.first }} {{ result.name.last }}</h3>
     <h3>Country: {{ result.location.country }}</h3>
     <h3>Birthdate: {{ prettyBirthday }}</h3>
@@ -60,6 +64,7 @@
     <h3>Email: <a v-bind:href="'mailto'+result.email">{{ result.email}} </a></h3>
     <img v-bind:src="result.picture.large">
     </center>
+    
 
   <head>
     <style>
